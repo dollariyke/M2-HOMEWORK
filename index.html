@@ -70,7 +70,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
         width: 100%;
       }
       .container {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
       }
       .album-container {
       }
@@ -197,7 +197,17 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - 3 albums per row when you are on a tablet (or a smaller window)
             - 2 albums per row when you are on a small screen
         -->
-    <div class="container">
+        <a
+        class="btn btn-primary"
+        data-toggle="collapse"
+        href="#fav"
+        role="button"
+        aria-expanded="false"
+        aria-controls="fav"
+      >
+        Album Review
+      </a>
+    <div class="container" id="fav">
       <h2>Favorite Album</h2>
       <hr />
       <div class="row">
@@ -362,7 +372,17 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - Tracklist
             - ... And whatever you think it's interesting about it!
         -->
-    <div class="container">
+    <a
+      class="btn btn-primary"
+      data-toggle="collapse"
+      href="#review"
+      role="button"
+      aria-expanded="false"
+      aria-controls="review"
+    >
+      Album Review
+    </a>
+    <div class="container" id="review">
       <h2>Album Review</h2>
       <hr />
       <div class="row">
@@ -410,7 +430,19 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             aesthetically" significant.
           </p>
         </div>
-        <div class="container">
+    </div>
+</div>
+        <a
+          class="btn btn-primary"
+          data-toggle="collapse"
+          href="#hall"
+          role="button"
+          aria-expanded="false"
+          aria-controls="hall"
+        >
+          Hall of shame
+        </a>
+        <div class="container" id="hall">
           <h2>Hall of shame</h2>
           <hr />
           <ul class="list-group list-group-flush">
@@ -456,7 +488,17 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
           </ul>
         </div>
 
-        <div class="container">
+        <a
+          class="btn btn-primary"
+          data-toggle="collapse"
+          href="#covers"
+          role="button"
+          aria-expanded="false"
+          aria-controls="covers"
+        >
+          Tapestry Of Album pictures
+        </a>
+        <div class="container" id="covers">
           <h2>Tapestry Of Album pictures</h2>
           <hr />
 
