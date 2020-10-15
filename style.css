@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Nova Square', cursive;
+    background-color:whitesmoke;
+    color: rgb(41, 37, 37);
+    
+}
+
+#jumbo {
+    background-image: url(/Image/boats-2758962_1920.jpg);
+    background-size: cover;
+    height: 90vh;
+    background-position-y: 60%;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    #dod {
+        display: none;
+    }
+
+}
+
+.card-img-top {
+    height: 10rem;
+    max-width: 15rem;
+    align-self: center;
+}
+
+
+
+.container, .carousel-inner{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+footer{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(39, 37, 37);
+    color: white;
+}
