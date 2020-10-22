@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day
+- You can ask for tutor's help
+- You can google / use StackOverflow BUT we suggest you to use just the material provided
+- To test the page, just open it with your default browser.
+- Use Bootstrap4 classes to render the page.
+- Use correctly containers and rows in order to have a great display
+ASSIGNMENT TOPIC 
+You are creating a website to showcase your favourite albums.
+In this page you'd like to have a short bio of yourself, the top albums of your life, 
+the worst album you ever listen to and everything related to the music you love.
+IMPORTANT:
+Start from the previous assignment
+NOTE:
+Most of the time, even the most expert of designers, need inspiration.
+Spend 30 minutes surfing the web and searching for the way of rapresenting album that you like the most.
+Could be the Amazon way, the Spotify or Apple music way or some other blog out there.
+-->
+
+<html>
+  <head>
+    <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* PREVIOUS STUFF */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Nova Square", cursive;
+      }
+
+      body {
+        max-width: 100%;
+        margin: 0 auto;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+      .card {
+        margin-top: 5px;
+      }
+
+      footer {
+        background-color: rgb(29, 27, 27);
+        color: white;
+        width: 100%;
+      }
+      .container {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- EXERCISE 1
+        Use the specific bootstrap component to implement a Breadcrumb
+        -->
+
+    <!-- EXERCISE 2
+            Create a Jumbotron section with a quick explanation / image of the website
+        -->
+
+    <!-- EXERCISE 3
+            Foreach album in the favorite list, place the genre inside a badge
+        -->
+
+    <!-- EXERCISE 4
+            Foreach album in the favorite list, use the Bootstrap Card to contain it.
+            Use card layouts to format it in the best and more compatible way.
+        -->
+
+    <!-- EXERCISE 5
+            Place the tracklist inside a Bootstrap table.
+            The row column must be alternate.
+            Use one column for the track order, one of the title and one for the length.
+            (If you want, you can also add extra columns)
+        -->
+
+    <!-- EXERCISE 6
+            Add a DELETE bootstrap button on each row of the tracklist, with appropriate transitions on the various pseudo-class states 
+            which will apply for the subsequent button you'll use.
+            Clicking on the button the row must disappear. 
+            Add a fade-out effect using a CSS transition effect
+        -->
+
+    <!-- EXERCISE 7
+            Add a "Contact Me" form in the footer.
+            The "Contact Me" form has 2 fields:
+            - Email
+            - Text of the message
+            Use the correct Bootstrap styles for styling the buttons
+        -->
+
+    <!-- EXERCISE 8 
+            Add to the footer an extra column with the same links of the top nav.
+        -->
+
+    <!-- EXERCISE 9
+            Add a button "Add Track" under the track list the album, add a nice shadow transition when the button is hovered
+        -->
+
+    <!-- EXERCISE 10
+            On "Add Track" button, open a new modal.
+            The modal shall contain a form with:
+            - Track number
+            - Track name
+            - Track length
+            - Track featuring
+            - Live Track (checkbox)
+            The fields should be inside an Input Group and divided in 2 columns.
+        -->
+
+    <!-- EXERCISE 11
+            Add 2 bootstrap buttons at the bottom of the modal window:
+            - Close => clear the fields and close the modal
+            - Add => Add the track to the list of tracks in the main page and display an alert success message 
+            - The new list-element added to the list will appear with a fade-in transition effect
+            https://getbootstrap.com/docs/4.4/components/alerts/
+            [EXTRA] Make the message disappear after 5 seconds
+            https://www.w3schools.com/jsref/met_win_settimeout.asp
+        -->
+
+    <!-- EXERCISE 12
+            All the field (except for Feat. and Live Track) are required fields and requires validation.
+            If the user clicks on the Add button and some fields are empty, a warning alert must be show
+        -->
+
+    <!-- ############### -->
+    <!-- ###  EXTRA  ### -->
+    <!-- ############### -->
+
+    <!-- EXERCISE 13
+            For each "Album cover" in your page, add a tooltip with the title
+        -->
+
+    <!-- EXERCISE 14
+            Update the header and footer links using scrollspy to render a smooth transition to the parts of the document.
+        -->
+
+    <!-- EXERCISE 15
+            Add a Album Carousel with controls to display the top 10 albums
+        -->
+
+    <!-- EXERCISE 16
+            Make every section of the page "collapsable" if the user clicks on the section title
+        -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">MyMusic</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse text-center"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Favorite Album</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Album Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Album covers</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Music Genre
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+ 
+    <button
+      class="btn btn-dark"
+      data-toggle="collapse"
+      href="#fav"
+      role="button"
+      aria-expanded="false"
+      aria-controls="fav"
+    >
+      Favorite Album
+    </button>
+    <div class="container" id="fav">
+      <h2>Favorite Album</h2>
+      <hr />
+      <div class="row">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img
+              src="./image/alas vending.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/all mirrors.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img
+              src="./image/darkside of the moon.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img
+              src="./image/fetch the bolt.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/folklore.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/future.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/lover.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/olms.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/rumours.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/The album.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img
+              src="./image/the rarities.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card" style="width: 10rem">
+            <img src="./image/thriller.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button 
+    class="btn btn-dark"
+    data-toggle="collapse"
+    href="#review"
+    type="button"
+    aria-expanded="false"
+    aria-controls="review"
+  >
+    Album Review
+    </button>
+  <div class="container" id="review">
+    <h2>Album Review</h2>
+    <hr />
+    <div class="row">
+      <div class="col-4">
+        <div class="card" style="width: 10rem">
+          <img src="./image/thriller.jpg" class="card-img-top" alt="..." />
+        </div>
+      </div>
+      <div class="col-8">
+        <p>Title: Thriller</p>
+        <p>Band:</p>
+        <p>Length:</p>
+        <p>Genre:</p>
+        <p>Tracklist:</p>
+        <p>
+          About: Michael Jackson's Thriller is a 1983 music video made for the
+          Michael Jackson song "Thriller", directed by John Landis and written
+          by Landis and Jackson. It references numerous horror films, and
+          stars Jackson performing a dance routine with a horde of the undead.
+          Ola Ray co-stars as Jackson's girlfriend. Jackson contacted Landis
+          after seeing his film An American Werewolf in London (1981). The
+          pair conceived a short film with a budget much larger than previous
+          music videos. It was filmed at the Palace Theatre in Downtown Los
+          Angeles, the junction of Union Pacific Avenue and South Calzona
+          Street in East Los Angeles, and the Angeleno Heights neighborhood at
+          1345 Carroll Avenue. It was accompanied by a making-of documentary,
+          Making Michael Jackson's Thriller, produced to sell to television
+          networks. Michael Jackson's Thriller was launched to great
+          anticipation and played regularly on MTV. It doubled the sales of
+          the Thriller album, helping it become the bestselling album in
+          history, and sold over a million copies on VHS, becoming the
+          bestselling videotape at the time. It is credited for transforming
+          music videos into a serious art form, breaking down racial barriers
+          in popular entertainment, and popularizing the making-of
+          documentary. The success transformed Jackson into a dominant force
+          in global pop culture.[3] Many elements of Michael Jackson's
+          Thriller have had a lasting impact on popular culture, such as the
+          zombie dance and Jackson's red jacket, designed by Landis's wife
+          Deborah Nadoolman. Fans worldwide re-enact its zombie dance and it
+          remains popular on YouTube. The Library of Congress described it as
+          "the most famous music video of all time", and it has been named the
+          greatest video of all time by various publications and readers'
+          polls. In 2009, it became the first music video inducted into the
+          National Film Registry as "culturally, historically or
+          aesthetically" significant.
+        </p>
+      </div>
+  </div>
+</div>
+
+      <button
+        class="btn btn-dark"
+        data-toggle="collapse"
+        href="#hall"
+        type="button"
+        aria-expanded="false"
+        aria-controls="hall"
+      >
+        Hall of shame
+    </button>
+      <div class="container" id="hall">
+        <h2>Hall of shame</h2>
+        <hr />
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">"Ice Ice Baby", Vanilla Ice (1990)o</li>
+          <li class="list-group-item">
+            o placed first in a Sydney Morning Herald reader poll to determine
+            the
+          </li>
+          <li class="list-group-item">
+            "Could It Be Magic", Take That (1992)
+          </li>
+          <li class="list-group-item">"What's Up?", 4 Non Blondes (1993)</li>
+          <li class="list-group-item">"Mr Blobby", Mr Blobby (1993)</li>
+          <li class="list-group-item">"Barbie Girl", Aqua (1997)</li>
+          <li class="list-group-item">"Life", Des'ree (1998)</li>
+          <li class="list-group-item">"Thong Song", Sisqó (2000)</li>
+          <li class="list-group-item">
+            "The Christmas Shoes", NewSong (2000)
+          </li>
+          <li class="list-group-item">
+            "Who Let the Dogs Out?", Baha Men (2000)
+          </li>
+          <li class="list-group-item">
+            "Big Yellow Taxi", Counting Crows featuring Vanessa Carlton (2002)
+          </li>
+          <li class="list-group-item">
+            "The Cheeky Song (Touch My Bum)", The Cheeky Girls (2002)
+          </li>
+          <li class="list-group-item">
+            "You're Beautiful", James Blunt (2005)
+          </li>
+          <li class="list-group-item">
+            "My Humps", The Black Eyed Peas (2005)
+          </li>
+          <li class="list-group-item">"Rockstar", Nickelback (2005)</li>
+          <li class="list-group-item">"Baby", Justin Bieber (2010)</li>
+          <li class="list-group-item">
+            "Miracles", Insane Clown Posse (2010)
+          </li>
+          <li class="list-group-item">"Friday", Rebecca Black (2011)</li>
+          <li class="list-group-item">"Swagger Jagger", Cher Lloyd (2011)</li>
+          <li class="list-group-item">"Hot Problems", Double Take (2012)</li>
+        </ul>
+      </div>
+
+      <button
+        class="btn btn-dark"
+        data-toggle="collapse"
+        href="#covers"
+        type="button"
+        aria-expanded="false"
+        aria-controls="covers"
+      >
+        Tapestry Of Album pictures
+    </button>
+      <div class="container" id="covers">
+        <h2>Tapestry Of Album pictures</h2>
+        <hr />
+
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/alas vending.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/when we all.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/darkside of the moon.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/folklore.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img src="./image/future.jpg" class="card-img-top" alt="..." />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img src="./image/lover.jpg" class="card-img-top" alt="..." />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img src="./image/olms.jpg" class="card-img-top" alt="..." />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img src="./image/rumours.jpg" class="card-img-top" alt="..." />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/The album.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/the rarities.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/thriller.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/the rarities.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/when we all.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/alas vending.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/all mirrors.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/darkside of the moon.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img
+                src="./image/fetch the bolt.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img src="./image/future.jpg" class="card-img-top" alt="..." />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img src="./image/lover.jpg" class="card-img-top" alt="..." />
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 10rem">
+              <img src="./image/olms.jpg" class="card-img-top" alt="..." />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <footer class="container-fluid text-center">
+    MyMusic<br />
+    ikemba chimezie
+  </footer>
+</html>
