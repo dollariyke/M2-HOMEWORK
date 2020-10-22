@@ -31,4 +31,8 @@
     margin-bottom: 0;
     background-image: url("./image/background-313415_1280.jpg");
     color: white;
+    background-position-y:-100px 
+  }
+  .tracklist{
+      margin-top: 40px;
   }
